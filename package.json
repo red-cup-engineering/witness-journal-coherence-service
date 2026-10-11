@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "@red-cup-engineering/eavt-services-section": "workspace:*",
-    "@red-cup-engineering/json-file-codec-service": "0.1.2"
+    "@red-cup-engineering/json-file-codec-service": "workspace:*"
   }
 }
