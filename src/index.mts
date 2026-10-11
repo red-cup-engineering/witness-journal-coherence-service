@@ -9,7 +9,7 @@
  * either one to reach the other and back returns to the same witness pivot.
  *
  * The round-trip mechanics themselves (is this one reading an isomorphism at
- * all?) are generic and live in `@red-cup-engineering/wire-form-round-trip-check`;
+ * all?) are generic and live in `@red-cup-engineering/eavt-services-section`'s `ledger/reading`;
  * this package is the witness-journal-domain judgement built on top of them.
  * Extracted from `@red-cup-engineering/relating`'s ledger module, where the two
  * were fused in one file.
@@ -19,14 +19,27 @@ import {
   isLogReadingIso,
   readingsHopLosslessly,
   logReadingsHopLosslessly,
-  type Reading,
-  type LogReading,
-  type WitnessRow,
-  type WitnessLog,
-} from "@red-cup-engineering/wire-form-round-trip-check";
-import { eavtRecord } from "@red-cup-engineering/json-file-codec-service/jsonl/eavt";
+} from "@red-cup-engineering/eavt-services-section/ledger/reading";
+import { eavtRecord, type EAVT, type EAVTRecord } from "@red-cup-engineering/json-file-codec-service/jsonl/eavt";
 
-export type { Reading, LogReading, WitnessRow, WitnessLog } from "@red-cup-engineering/wire-form-round-trip-check";
+/** One witness: an EAVT row, as a tuple or as a record. */
+export type WitnessRow = EAVT | EAVTRecord;
+/** An ordered witness log. */
+export type WitnessLog = readonly WitnessRow[];
+
+/** A named isomorphism between one witness row and one wire form. */
+export interface Reading<Wire> {
+  readonly id: string;
+  toWire(witness: WitnessRow): Wire;
+  fromWire(wire: Wire): WitnessRow;
+}
+
+/** The same law over an ordered witness log. */
+export interface LogReading<Wire> {
+  readonly id: string;
+  toWire(witnessLog: WitnessLog): Wire;
+  fromWire(wire: Wire): WitnessLog;
+}
 
 function assertNonEmptyId(id: string, context: string): void {
   if (typeof id !== "string" || id.length < 1) {

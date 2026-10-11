@@ -6,7 +6,7 @@ import {
   assertCoherent,
   assertLogCoherent,
 } from "@red-cup-engineering/witness-journal-coherence-service";
-import { readingAsLogReading } from "@red-cup-engineering/wire-form-round-trip-check";
+import { readingAsLogReading } from "@red-cup-engineering/eavt-services-section/ledger/reading";
 
 const witnessA = { e: "alpha", a: "warm", v: true, t: 1 };
 const witnessB = { e: "beta", a: "warm", v: false, t: 2 };

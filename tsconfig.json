@@ -20,7 +20,10 @@
     "noEmit": true,
     "skipLibCheck": true,
 
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@red-cup-engineering/eavt-services-section/ledger/reading": ["./src/eavt-ledger-reading.d.mts"]
+    }
   },
   "include": ["src/**/*.mts"]
 }
