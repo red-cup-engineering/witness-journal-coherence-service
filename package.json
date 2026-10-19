@@ -36,5 +36,9 @@
   "dependencies": {
     "@red-cup-engineering/eavt-services-section": "workspace:*",
     "@red-cup-engineering/json-file-codec-service": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/witness-journal-coherence-service.git"
   }
 }
