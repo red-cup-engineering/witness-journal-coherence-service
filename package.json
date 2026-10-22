@@ -2,7 +2,7 @@
   "name": "@red-cup-engineering/witness-journal-coherence-service",
   "version": "0.0.1",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "description": "Computes the coherence judgement between two wire-form readings of the same witness or ordered witness log — a settled judgement over witnesses, never a stored field. Built on the generic round-trip check in @red-cup-engineering/wire-form-round-trip-check; extracted from relating's ledger module, where the two capabilities were fused.",
   "engines": {
@@ -40,5 +40,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/red-cup-engineering/witness-journal-coherence-service.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
   }
 }
