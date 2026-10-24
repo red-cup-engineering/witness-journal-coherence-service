@@ -34,7 +34,7 @@
     "typescript": "^5.8.0"
   },
   "dependencies": {
-    "@red-cup-engineering/eavt-engineering-services-section": "workspace:*",
+    "@red-cup-engineering/eavt-services-section": "workspace:*",
     "@red-cup-engineering/json-file-codec-service": "workspace:*"
   },
   "repository": {
